@@ -1,6 +1,8 @@
 package index;
 
 import java.io.IOException;
+import java.util.Date;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,6 +19,9 @@ public class IndexServlet extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
+	
+	private int pageCounter = 0;
+	
     public IndexServlet() {
         super();
         // TODO Auto-generated constructor stub
@@ -27,7 +32,9 @@ public class IndexServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
+		request.setAttribute("pageCounter",pageCounter());
 		request.getRequestDispatcher("WEB-INF/views/index.jsp").forward(request, response); 	
+		
 	}
 
 	/**
@@ -35,7 +42,17 @@ public class IndexServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-		doGet(request, response);
+		request.setAttribute("pageCounter",pageCounter());
+		request.setAttribute("name",request.getParameter("name"));
+		request.setAttribute("surname",request.getParameter("surname"));
+		request.setAttribute("title",request.getParameter("title"));
+		request.setAttribute("textContent",request.getParameter("textContent"));
+    	request.getRequestDispatcher("WEB-INF/views/index.jsp").forward(request, response); 	
+    	
+	}
+	
+	private synchronized int pageCounter(){
+		return ++pageCounter;
 	}
 
 }

@@ -27,15 +27,7 @@ public class PostServlet extends HttpServlet{
     
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-    	
-    	
-    	req.setAttribute("name",req.getParameter("name"));
-    	req.setAttribute("surname",req.getParameter("surname"));
-    	req.setAttribute("title",req.getParameter("title"));
-    	req.setAttribute("textContent",req.getParameter("textContent"));
-    	req.getRequestDispatcher("WEB-INF/views/index.jsp").forward(req, res);
-
-    	
+    	doGet(req, res);
     }
 	
 }

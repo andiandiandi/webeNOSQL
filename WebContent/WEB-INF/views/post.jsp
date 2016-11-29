@@ -39,7 +39,7 @@
               <div class="container">
                 <div class="row">
                   <div class="col-md-12">
-                    <form role="form" action="/WebE/post" method="post">
+                    <form role="form" action="/WebE/index" method="post">
                       <div class="form-group">
                       <label style="display:block">Name:</label>
 						<input type="text" name="name" style="width:500px;height:20px;">

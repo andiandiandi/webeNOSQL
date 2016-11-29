@@ -1,3 +1,6 @@
+<%@ taglib prefix='c' uri='http://java.sun.com/jsp/jstl/core' %>
+<%@ page import="java.io.*,java.util.*, javax.servlet.*" %>
+
 <!DOCTYPE>
 <html>
 
@@ -10,8 +13,8 @@
 <body>
     <header class="clearfix">
         <div class="column_70 left clearfix">
-            <h1 style="font-size:300%">AndTech</h1>
-            <h3>The best place for future technology</h3>
+            <h1 style="font-size:300%">Ein h1 header der den Firmennamen beinhalten könnte</h1>
+            <h3>Ein h3 header für einen Slogan zur Firma</h3>
         </div>
         <div class="column_30 left clearfix" style="margin-top:5%;text-align: right;">
             <a href="https://facebook.com" class="facebook"></a>
@@ -28,7 +31,7 @@
             <a class="button_nav" href="/WebE/post"><span>submit a post</span></a>
         </div>
         <div class="column_30 left clearfix" style="text-align:left;margin-top:15px;">
-            <input type="text" id="searchbar" name="search" placeholder="Search blog . . . " style="width:90%" onkeyup="filter()">
+            <input type="text" id="searchbar" name="search" placeholder="dies ist ein input tag um die posts in der mitte zu filtern" style="width:90%" onkeyup="filter()">
         </div>
         <div class="column_40 left clearfix" style="text-align:right;margin-top:10px;">
             <a class="button_login" href="file:///C:/Users/Andi/Documents/GitHub/webe2/partials/login.html">Log in</a>
@@ -41,11 +44,10 @@
         <aside class="aside_left content column_20 left clearfix">
             <div class="aside_left aside_content">
                 <div class="aside_label">
-                    <a href="#"><h3>BLOGGER TEMPLATES</h3></a>
+                    <a href="#"><h3>Dies ist ein h3 großer header</h3></a>
                 </div>
                 <div class="aside_content">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Hier ist das erste Div zur unterteilung im linken aside
                 </div>
             </div>
             <div class="aside_left aside_content">
@@ -53,8 +55,7 @@
                     <a href="#"><h3>BLOGGER NEWS</h3></a>
                 </div>
                 <div class="aside_content">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                   Hier ist das zweite Div
                 </div>
             </div>
             <div class="aside_left aside_content">
@@ -62,8 +63,19 @@
                     <a href="#"><h3>LABEL</h3></a>
                 </div>
                 <div class="aside_content">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    <span style="color:red">Hier ist das dritte Div. Hier steht ganz viel Text damit ein overflow stattfindet und eine scrollbar erscheint:</span> Lorem ipsum dolor sit amet, 
+                    consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos
+                     et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum 
+                     dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
+                     At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                      At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor
+                       sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                        accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                      At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor
+                       sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                        accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
                 </div>
             </div>
         </aside>
@@ -71,40 +83,54 @@
         <section class="column_50 left mr_1 blog_content clearfix">
 
           <div class="blog_post">
-               
-               	<h1>WELCOME ${name} ${surname}</h1>
-                <h2 class="blog_post_header"><c:out value="${title}"/></h2>
+               		 <span style="vertical-align:top;"><img src="${pageContext.request.contextPath}/images/calendar_icon.png" style="width:25px;height:25px;margin-right:5px" alt="calendar" /><%=new Date().toString()%></span>
+           			<c:choose>
+    				<c:when test="${name.length()>0 || surname.length()>0}">
+       					 <h1>Welcome ${name} ${surname} </h1>
+       					 <br />
+   					 </c:when>    
+				 </c:choose>	
+				 
+                <h2 class="blog_post_header">${title}</h2>
                 <div class="blog_post_content" style="word-wrap:break-word;">
                 	${textContent}
                 </div>
             </div>
 
             <hr>
-            
-		
-            
+         
         </section>
 
         <aside class="aside_right content column_22 left mr_1 clearfix">
+        
+        	<div class="aside_left aside_content">
+                <div class="aside_label">
+                    <span><h3>PAGE COUNTER:</h3></span>
+                </div>
+                <div class="aside_content">
+                   <h5>visited: ${pageCounter} times</h5>
+                </div>
+            </div>
+        
             <div class="aside_left aside_content">
                 <div class="aside_label">
                     <a href="#"><h3>POPULAR POSTS</h3></a>
                 </div>
                 <div class="aside_content">
+                	<span>Hier wird eine Liste verwendet um beliebte blog posts anzuzeigen</span>
                     <ul>
-                        <li>post 1</li>
-                        <li>post 2</li>
-                        <li>post 3</li>
+                        <li><a href="#">post 1</a></li>
+                        <li><a href="#">post 2</a></li>
+                        <li><a href="#">post 3</a></li>
                     </ul>
                 </div>
             </div>
             <div class="aside_left aside_content">
                 <div class="aside_label">
-                    <a href="#"><h3>BLOGROLL</h3></a>
+                    <a href="#"><h3>Dies ist ein Header in einem anchor tag</h3></a>
                 </div>
                 <div class="aside_content">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                   Hier wird das selbe Prinzip wie auf der linken Seite angewandt. Ein Div in einem aside Element.
                 </div>
             </div>
             <div class="aside_left aside_content">
@@ -121,7 +147,7 @@
 
     <footer>
         <div class="footer">
-            <span>Information about newest technology, gathered with precision</span>
+            <span>Hier steht der content zum footer</span>
             <br>
             <span>@Andi | ALL RIGHTS RESERVED</span>
         </div>
